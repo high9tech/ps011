@@ -1,0 +1,180 @@
+:root {
+  --gold-primary: #ffd700;
+  --gold-dark: #b8860b;
+  --gold-gradient: linear-gradient(135deg, #ffe066 0%, #d4af37 50%, #996515 100%);
+  --bg-dark: rgba(5, 7, 15, 0.75);
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* صورة خلفية كامل الشاشة وبأعلى جودة */
+.full-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-color: #05070f;
+}
+
+.full-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* طبقة تظليل شفافة فوق الخلفية لإبراز الكروت والأزرار */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(5,7,15,0.85) 100%);
+  z-index: -1;
+}
+
+/* اللوحة الرئيسية */
+.main-card {
+  background: var(--card-bg);
+  border: 2px solid var(--gold-dark);
+  border-radius: 20px;
+  padding: 35px 25px;
+  width: 90%;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), 0 15px 35px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.brand-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* شريط الكاش */
+.cache-status {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffb703;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-dot.active {
+  background-color: #00e676;
+  box-shadow: 0 0 10px #00e676;
+}
+
+/* الزر الذهبي الموحد */
+.action-wrapper {
+  margin: 20px 0;
+}
+
+.btn-gold-trigger {
+  width: 100%;
+  background: var(--gold-gradient);
+  color: #000;
+  border: none;
+  padding: 18px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-gold-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-gold-trigger:active {
+  transform: translateY(1px);
+}
+
+.btn-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.btn-subtext {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+/* شاشة السجل (Console) */
+.console-box {
+  background-color: rgba(2, 4, 8, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  text-align: right;
+  direction: ltr;
+  font-size: 0.82rem;
+  color: #a2b1c6;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.console-line {
+  margin: 4px 0;
+}
+
+.prefix {
+  color: var(--gold-primary);
+  font-weight: bold;
+}

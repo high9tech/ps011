@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# HIGH TECH PS - Host Cache Manifest
+# Version 2.0 (Gold Theme Update)
+
+CACHE:
+./index.html
+./style.css
+./script.js
+./sw.js
+./manifest.json
+./background.png
+
+NETWORK:
+*
+
+FALLBACK:
