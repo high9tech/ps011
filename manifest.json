@@ -1,0 +1,22 @@
+{
+  "short_name": "HIGH TECH PS",
+  "name": "HIGH TECH PS - Jailbreak Host",
+  "description": "HIGH TECH PS All-in-One Playstation Jailbreak Host & Exploits",
+  "icons": [
+    {
+      "src": "./background.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./background.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#05070f",
+  "theme_color": "#d4af37",
+  "display": "standalone",
+  "orientation": "landscape"
+}
