@@ -7,6 +7,14 @@ const ASSETS_TO_CACHE = [
   './script.js',
   './manifest.json',
   './background.png'
+  './lapse.js'
+'./manifest.appcache'
+'./goldhen.bin'
+'./style.css'
+];
+];
+];
+];
 ];
 
 // مرحلة التثبيت والتخزين المؤقت
