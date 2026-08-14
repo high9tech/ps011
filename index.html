@@ -48,23 +48,26 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
   <script>
-    // تسجيل الـ Service Worker للكاش أوفلاين
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
+        // تسجيل sw.js بدون ./
+        navigator.serviceWorker.register('sw.js')
           .then((reg) => {
             document.getElementById('cache-status-text').innerText = 'جاهز (Offline Ready)';
             document.getElementById('cache-dot').classList.add('active');
-            appendConsole('الكاش مفعل وجاهز للعمل بدون إنترنت.');
+            if (typeof appendConsole === 'function') {
+              appendConsole('تم حفظ الكاش بنجاح! جاهز للعمل بدون إنترنت.');
+            }
           })
           .catch((err) => {
-            document.getElementById('cache-status-text').innerText = 'غير مفعل';
-            appendConsole('فشل تسجيل ملف الكاش.');
+            console.error(err);
+            document.getElementById('cache-status-text').innerText = 'خطأ في الكاش!';
+            if (typeof appendConsole === 'function') {
+              appendConsole('فشل تسجيل الكاش: ' + err.message);
+            }
           });
       });
     }
   </script>
-</body>
-</html>
